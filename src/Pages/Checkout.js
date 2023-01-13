@@ -26,7 +26,10 @@ import { useState } from "react";
 
 export default function Checkout() {
   let [initialValue, setinitialValue] = useState(0);
-  let [product, setproduct] = useState(0)
+  let [product, setproduct] = useState(0);
+  let [producttotal, setproducttotal] = useState(0);
+  let [product2Total, setProduct2Total] = useState(0);
+  const [total, settotal] = useState(false);
   const country = [
     {
       label: "Philippines",
@@ -52,7 +55,7 @@ export default function Checkout() {
     subCon: {
       display: "flex",
       justifyContent: "space-between",
-      marginTop: "-7.07px",
+      marginTop: "58.01px",
       "@media only screen and (max-width : 400px)": {
         flexDirection: "column-reverse",
       },
@@ -70,12 +73,11 @@ export default function Checkout() {
       fontFamily: "Montserrat",
       color: "#333333",
       marginBottom: "14.95px",
-      marginTop: "58.01px",
     },
     label: {
       fontSize: "12px",
       fontFamily: "Montserrat",
-      marginBottom : "6.99px"
+      marginBottom: "6.99px",
     },
     checkCon: {
       marginTop: "20.01px",
@@ -152,11 +154,12 @@ export default function Checkout() {
     productName: {
       fontSize: "16px",
       fontFamily: "Montserrat",
-      marginBottom : "6px"
+      marginBottom: "6px",
     },
     priceCon: {
       display: "flex",
       justifyContent: "space-between",
+      alignItems: "center",
     },
     price: {
       fontSize: "16px",
@@ -170,7 +173,7 @@ export default function Checkout() {
     },
     productQuantity: {
       width: "134.25px",
-      marginTop : "24.2px",
+      marginTop: "24.2px",
       [`& fieldset`]: {
         borderRadius: "12px",
         border: "1px solid #828282",
@@ -206,10 +209,26 @@ export default function Checkout() {
       setinitialValue((initialValue = 0));
     } else {
       setinitialValue(initialValue - 1);
+      setproducttotal(producttotal - 54.99);
     }
   };
   const handleChangeAdd = () => {
     setinitialValue(initialValue + 1);
+    setproducttotal(producttotal + 54.99);
+    settotal(true);
+  };
+  const handleChangeRemove1 = () => {
+    if (product <= 0) {
+      setproduct((product = 0));
+    } else {
+      setproduct(product - 1);
+      setProduct2Total(product2Total - 74.99);
+    }
+  };
+  const handleChangeAdd1 = () => {
+    setproduct(product + 1);
+    setProduct2Total(product2Total + 74.99);
+    settotal(true);
   };
   return (
     <Box sx={style.mainCon}>
@@ -395,19 +414,19 @@ export default function Checkout() {
                   </Box>
                   <TextField
                     sx={style.productQuantity}
-                    value={initialValue}
+                    value={product}
                     inputProps={{ style: { textAlign: "center" } }}
                     InputProps={{
                       startAdornment: (
                         <InputAdornment>
-                          <IconButton onClick={handleChangeRemove}>
+                          <IconButton onClick={handleChangeRemove1}>
                             <IndeterminateCheckBoxIcon sx={style.iconButton} />
                           </IconButton>
                         </InputAdornment>
                       ),
                       endAdornment: (
                         <InputAdornment>
-                          <IconButton onClick={handleChangeAdd}>
+                          <IconButton onClick={handleChangeAdd1}>
                             <AddBoxIcon sx={style.iconButton} />
                           </IconButton>
                         </InputAdornment>
@@ -425,7 +444,16 @@ export default function Checkout() {
                 <Box sx={style.divider}></Box>
                 <Box sx={style.shipping}>
                   <Typography sx={style.shippingFee}>Total</Typography>
-                  <Typography sx={style.total}>$148.99</Typography>
+                  <Typography sx={style.total}>
+                    $
+                    {total
+                      ? (
+                          Math.round(
+                            (producttotal + product2Total + 19) * 100
+                          ) / 100
+                        ).toFixed(2)
+                      : 0}
+                  </Typography>
                 </Box>
               </Box>
             </Box>
