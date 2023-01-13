@@ -52,6 +52,9 @@ export default function Checkout() {
       display: "flex",
       justifyContent: "space-between",
       marginTop: "70px",
+      "@media only screen and (max-width : 400px)" : {
+        flexDirection : "column-reverse"
+      }
     },
     infoCon: {
       maxWidth: "465px",
