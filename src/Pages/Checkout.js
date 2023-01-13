@@ -26,6 +26,7 @@ import { useState } from "react";
 
 export default function Checkout() {
   let [initialValue, setinitialValue] = useState(0);
+  let [product, setproduct] = useState(0)
   const country = [
     {
       label: "Philippines",
@@ -51,7 +52,7 @@ export default function Checkout() {
     subCon: {
       display: "flex",
       justifyContent: "space-between",
-      marginTop: "70px",
+      marginTop: "-7.07px",
       "@media only screen and (max-width : 400px)": {
         flexDirection: "column-reverse",
       },
@@ -68,11 +69,22 @@ export default function Checkout() {
       fontSize: "18px",
       fontFamily: "Montserrat",
       color: "#333333",
+      marginBottom: "14.95px",
+      marginTop: "58.01px",
+    },
+    label: {
+      fontSize: "12px",
+      fontFamily: "Montserrat",
+      marginBottom : "6.99px"
+    },
+    checkCon: {
+      marginTop: "20.01px",
     },
     inputField: {
       width: "465px",
       height: "56px",
       borderRadius: "12px",
+      marginBottom: "20.01px",
       [`& fieldset`]: {
         borderRadius: "12px",
         border: "1px solid #828282",
@@ -104,6 +116,7 @@ export default function Checkout() {
     buttonCon: {
       display: "flex",
       justifyContent: "right",
+      marginTop: "23px",
     },
     button: {
       padding: "12px 45px",
@@ -139,6 +152,7 @@ export default function Checkout() {
     productName: {
       fontSize: "16px",
       fontFamily: "Montserrat",
+      marginBottom : "6px"
     },
     priceCon: {
       display: "flex",
@@ -156,6 +170,7 @@ export default function Checkout() {
     },
     productQuantity: {
       width: "134.25px",
+      marginTop : "24.2px",
       [`& fieldset`]: {
         borderRadius: "12px",
         border: "1px solid #828282",
@@ -163,6 +178,27 @@ export default function Checkout() {
     },
     iconButton: {
       fontSize: "21px",
+    },
+    shippingCon: {
+      marginTop: "85.54px",
+    },
+    divider: {
+      width: "327.06px",
+      height: "1px",
+      backgroundColor: "#BDBDBD",
+      margin: "10.73px 0px",
+    },
+    shipping: {
+      display: "flex",
+      justifyContent: "space-between",
+    },
+    shippingFee: {
+      fontSize: "18px",
+      fontFamily: "Montserrat",
+    },
+    total: {
+      fontSize: "14px",
+      fontFamily: "Montserrat",
     },
   };
   const handleChangeRemove = () => {
@@ -182,7 +218,7 @@ export default function Checkout() {
         <Box sx={style.infoCon}>
           <Typography sx={style.subTitle}>Contact Information</Typography>
           <Box>
-            <Typography>E-mail</Typography>
+            <Typography sx={style.label}>E-mail</Typography>
             <TextField
               variant="outlined"
               placeholder="Enter your email..."
@@ -196,7 +232,7 @@ export default function Checkout() {
                 ),
               }}
             />
-            <Typography>Phone</Typography>
+            <Typography sx={style.label}>Phone</Typography>
             <TextField
               variant="outlined"
               placeholder="Enter your phone..."
@@ -213,7 +249,7 @@ export default function Checkout() {
           </Box>
           <Box>
             <Typography sx={style.subTitle}>Shipping address</Typography>
-            <Typography>Fullname</Typography>
+            <Typography sx={style.label}>Fullname</Typography>
             <TextField
               variant="outlined"
               placeholder="Enter your fullname..."
@@ -227,7 +263,7 @@ export default function Checkout() {
                 ),
               }}
             />
-            <Typography>Address</Typography>
+            <Typography sx={style.label}>Address</Typography>
             <TextField
               variant="outlined"
               placeholder="Your address..."
@@ -241,7 +277,7 @@ export default function Checkout() {
                 ),
               }}
             />
-            <Typography>City</Typography>
+            <Typography sx={style.label}>City</Typography>
             <TextField
               variant="outlined"
               placeholder="Your city..."
@@ -257,7 +293,7 @@ export default function Checkout() {
             />
             <Box sx={style.lastField}>
               <Box>
-                <Typography>Country</Typography>
+                <Typography sx={style.label}>Country</Typography>
                 <TextField
                   variant="outlined"
                   placeholder="Your country..."
@@ -281,7 +317,7 @@ export default function Checkout() {
                 </TextField>
               </Box>
               <Box>
-                <Typography>Postal code</Typography>
+                <Typography sx={style.label}>Postal code</Typography>
                 <TextField
                   variant="outlined"
                   placeholder="Your postal code..."
@@ -297,7 +333,7 @@ export default function Checkout() {
                 />
               </Box>
             </Box>
-            <FormControl>
+            <FormControl sx={style.checkCon}>
               <FormControlLabel
                 control={<Checkbox />}
                 label={
@@ -316,7 +352,7 @@ export default function Checkout() {
           </Box>
         </Box>
         <Box>
-          <Paper sx={style.paper}>
+          <Paper sx={style.paper} elevation="0">
             <Box sx={style.productCon}>
               <Box sx={style.productSubCon}>
                 <Box component="img" src={Photo1} sx={style.products}></Box>
@@ -349,7 +385,6 @@ export default function Checkout() {
                   ></TextField>
                 </Box>
               </Box>
-              <Box></Box>
               <Box sx={style.productSubCon}>
                 <Box component="img" src={Photo2} sx={style.products}></Box>
                 <Box>
@@ -379,6 +414,18 @@ export default function Checkout() {
                       ),
                     }}
                   ></TextField>
+                </Box>
+              </Box>
+              <Box sx={style.shippingCon}>
+                <Box sx={style.divider}></Box>
+                <Box sx={style.shipping}>
+                  <Typography sx={style.shippingFee}>Shipping</Typography>
+                  <Typography sx={style.total}>$19</Typography>
+                </Box>
+                <Box sx={style.divider}></Box>
+                <Box sx={style.shipping}>
+                  <Typography sx={style.shippingFee}>Total</Typography>
+                  <Typography sx={style.total}>$148.99</Typography>
                 </Box>
               </Box>
             </Box>
