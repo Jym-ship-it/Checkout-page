@@ -19,7 +19,7 @@ import PublicIcon from "@mui/icons-material/Public";
 import MarkunreadMailboxIcon from "@mui/icons-material/MarkunreadMailbox";
 import Checkbox from "@mui/material/Checkbox";
 import Photo1 from "../Assets/Images/photo1.png";
-import Photo2 from "../Assets/Images/photo2.png"
+import Photo2 from "../Assets/Images/photo2.png";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import IndeterminateCheckBoxIcon from "@mui/icons-material/IndeterminateCheckBox";
 import { useState } from "react";
@@ -52,9 +52,9 @@ export default function Checkout() {
       display: "flex",
       justifyContent: "space-between",
       marginTop: "70px",
-      "@media only screen and (max-width : 400px)" : {
-        flexDirection : "column-reverse"
-      }
+      "@media only screen and (max-width : 400px)": {
+        flexDirection: "column-reverse",
+      },
     },
     infoCon: {
       maxWidth: "465px",
@@ -126,45 +126,44 @@ export default function Checkout() {
     productCon: {
       padding: "1px 29px",
     },
-    productSubCon:{
-      display : "flex",
-      justifyContent : "space-between",
-      marginTop : "33px"
+    productSubCon: {
+      display: "flex",
+      justifyContent: "space-between",
+      marginTop: "33px",
     },
     products: {
       width: "145.7px",
       height: "135.91px",
       borderRadius: "12px",
     },
-    productName : {
-      fontSize : "16px",
-      fontFamily : "Montserrat"
+    productName: {
+      fontSize: "16px",
+      fontFamily: "Montserrat",
     },
-    priceCon : {
-      display : "flex",
-      justifyContent : "space-between"
+    priceCon: {
+      display: "flex",
+      justifyContent: "space-between",
     },
-    price : {
-      fontSize : "16px",
-      fontFamily : "Montserrat",
-      color : "#F2994A"
+    price: {
+      fontSize: "16px",
+      fontFamily: "Montserrat",
+      color: "#F2994A",
     },
-    discountedPrice : {
-      fontSize : "12px",
-      fontFamily : "Montserrat",
-      textDecorationLine : "line-through"
+    discountedPrice: {
+      fontSize: "12px",
+      fontFamily: "Montserrat",
+      textDecorationLine: "line-through",
     },
     productQuantity: {
       width: "134.25px",
       [`& fieldset`]: {
         borderRadius: "12px",
         border: "1px solid #828282",
-        
       },
     },
-    iconButton : {
-      fontSize : "21px"
-    }
+    iconButton: {
+      fontSize: "21px",
+    },
   };
   const handleChangeRemove = () => {
     if (initialValue <= 0) {
@@ -319,13 +318,13 @@ export default function Checkout() {
         <Box>
           <Paper sx={style.paper}>
             <Box sx={style.productCon}>
-              <Box sx = {style.productSubCon}>
+              <Box sx={style.productSubCon}>
                 <Box component="img" src={Photo1} sx={style.products}></Box>
                 <Box>
-                  <Typography sx = {style.productName}>Vintage Bag</Typography>
-                  <Box sx = {style.priceCon}>
-                    <Typography sx = {style.price}>$54.99</Typography>
-                    <Typography sx = {style.discountedPrice}>$94.99</Typography>
+                  <Typography sx={style.productName}>Vintage Bag</Typography>
+                  <Box sx={style.priceCon}>
+                    <Typography sx={style.price}>$54.99</Typography>
+                    <Typography sx={style.discountedPrice}>$94.99</Typography>
                   </Box>
                   <TextField
                     sx={style.productQuantity}
@@ -335,14 +334,14 @@ export default function Checkout() {
                       startAdornment: (
                         <InputAdornment>
                           <IconButton onClick={handleChangeRemove}>
-                            <IndeterminateCheckBoxIcon  sx = {style.iconButton}/>
+                            <IndeterminateCheckBoxIcon sx={style.iconButton} />
                           </IconButton>
                         </InputAdornment>
                       ),
                       endAdornment: (
                         <InputAdornment>
                           <IconButton onClick={handleChangeAdd}>
-                            <AddBoxIcon sx = {style.iconButton} />
+                            <AddBoxIcon sx={style.iconButton} />
                           </IconButton>
                         </InputAdornment>
                       ),
@@ -350,15 +349,14 @@ export default function Checkout() {
                   ></TextField>
                 </Box>
               </Box>
-              <Box>
-              </Box>
-              <Box sx = {style.productSubCon}>
-              <Box component="img" src={Photo2} sx={style.products}></Box>
+              <Box></Box>
+              <Box sx={style.productSubCon}>
+                <Box component="img" src={Photo2} sx={style.products}></Box>
                 <Box>
-                  <Typography sx = {style.productName}>Levi shoes</Typography>
-                  <Box sx = {style.priceCon}>
-                    <Typography sx = {style.price}>$74.99</Typography>
-                    <Typography sx = {style.discountedPrice}>$124.99</Typography>
+                  <Typography sx={style.productName}>Levi shoes</Typography>
+                  <Box sx={style.priceCon}>
+                    <Typography sx={style.price}>$74.99</Typography>
+                    <Typography sx={style.discountedPrice}>$124.99</Typography>
                   </Box>
                   <TextField
                     sx={style.productQuantity}
@@ -368,14 +366,14 @@ export default function Checkout() {
                       startAdornment: (
                         <InputAdornment>
                           <IconButton onClick={handleChangeRemove}>
-                            <IndeterminateCheckBoxIcon sx = {style.iconButton} />
+                            <IndeterminateCheckBoxIcon sx={style.iconButton} />
                           </IconButton>
                         </InputAdornment>
                       ),
                       endAdornment: (
                         <InputAdornment>
                           <IconButton onClick={handleChangeAdd}>
-                            <AddBoxIcon sx = {style.iconButton} />
+                            <AddBoxIcon sx={style.iconButton} />
                           </IconButton>
                         </InputAdornment>
                       ),
