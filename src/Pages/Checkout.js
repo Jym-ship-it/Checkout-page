@@ -45,7 +45,7 @@ export default function Checkout() {
   ];
   const style = {
     mainCon: {
-      margin: "64px 240px",
+      margin: "64px 18px",
       "@media only screen and (max-width : 400px)":{
         margin : "32px 18px"
       }
@@ -89,7 +89,7 @@ export default function Checkout() {
       fontSize: "12px",
       fontFamily: "Montserrat",
       marginBottom: "6.99px",
-      "@media screen only and (max-width : 400px)":{
+      "@media only screen and (max-width : 400px)":{
         fontSize : "10px"
       }
     },
@@ -110,7 +110,7 @@ export default function Checkout() {
         color: "#828282",
         fontSize: "16px",
       },
-      "@media screen only and (max-width : 400px)":{
+      "@media only screen and (max-width : 400px)":{
         width: "349.25px",
         height: "40.56px",
       }
@@ -155,14 +155,14 @@ export default function Checkout() {
       maxHeight: "535px",
       backgroundColor: "#F2F2F2",
       borderRadius: "12px",
-      "@media screen only and (max-width : 400px)":{
+      "@media only screen and (max-width : 400px)":{
         minWidth: "350px",
         minHeight: "489px",
       }
     },
     productCon: {
       padding: "1px 29px",
-      "@media screen only and (max-width : 400px)":{
+      "@media only screen and (max-width : 400px)":{
         padding : "1px 26px"
       }
     },
@@ -170,7 +170,7 @@ export default function Checkout() {
       display: "flex",
       justifyContent: "space-between",
       marginTop: "33px",
-      "@media screen only and (max-width : 400px)":{
+      "@media only screen and (max-width : 400px)":{
         marginTop : "28.89px"
       }
     },
@@ -178,7 +178,7 @@ export default function Checkout() {
       width: "145.7px",
       height: "135.91px",
       borderRadius: "12px",
-      "@media screen only and (max-width : 400px)":{
+      "@media only screen and (max-width : 400px)":{
         width: "130.71px",
         height: "124.32px",
       }
@@ -187,7 +187,7 @@ export default function Checkout() {
       fontSize: "16px",
       fontFamily: "Montserrat",
       marginBottom: "6px",
-      "@media screen only and (max-width : 400px)":{
+      "@media only screen and (max-width : 400px)":{
         fontSize : "12px",
         marginBottom : "5.49px"
       }
@@ -201,7 +201,7 @@ export default function Checkout() {
       fontSize: "16px",
       fontFamily: "Montserrat",
       color: "#F2994A",
-      "@media screen only and (max-width : 400px)":{
+      "@media only screen and (max-width : 400px)":{
         fontSize : "14px",
       }
     },
@@ -209,7 +209,7 @@ export default function Checkout() {
       fontSize: "12px",
       fontFamily: "Montserrat",
       textDecorationLine: "line-through",
-      "@media screen only and (max-width : 400px)":{
+      "@media only screen and (max-width : 400px)":{
         fontSize : "10px",
       }
     },
@@ -220,7 +220,7 @@ export default function Checkout() {
         borderRadius: "12px",
         border: "1px solid #828282",
       },
-      "@media screen only and (max-width : 400px)":{
+      "@media only screen and (max-width : 400px)":{
         width : "122.8px",
         marginTop : "22.13px"
       }
@@ -230,7 +230,7 @@ export default function Checkout() {
     },
     shippingCon: {
       marginTop: "95.24px",
-      "@media screen only and (max-width : 400px)":{
+      "@media only screen and (max-width : 400px)":{
         marginTop : "86.79px"
       }
     },
@@ -239,6 +239,10 @@ export default function Checkout() {
       height: "1px",
       backgroundColor: "#BDBDBD",
       margin: "10.73px 0px",
+      "@media only screen and (max-width : 400px)":{
+        width : "299px",
+        margin: "9.71px 0px",
+      }
     },
     shipping: {
       display: "flex",
@@ -247,15 +251,15 @@ export default function Checkout() {
     shippingFee: {
       fontSize: "18px",
       fontFamily: "Montserrat",
-      "@media screen only and (max-width : 400px)":{
-        fontSize : "100px",
+      "@media only screen and (max-width : 400px)":{
+        fontSize : "14px",
       }
     },
     total: {
-      fontSize: "14px",
+      fontSize: "18px",
       fontFamily: "Montserrat",
-      "@media screen only and (max-width : 400px)":{
-        fontSize : "100px",
+      "@media only screen and (max-width : 400px)":{
+        fontSize : "14px",
       }
     },
   };
