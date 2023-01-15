@@ -111,7 +111,7 @@ export default function Checkout() {
         fontSize: "16px",
       },
       "@media only screen and (max-width : 400px)":{
-        width: "364.25px",
+        width: "349.25px",
         height: "40.56px",
       }
     },
