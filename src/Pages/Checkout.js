@@ -60,7 +60,10 @@ export default function Checkout() {
       },
     },
     infoCon: {
-      maxWidth: "465px",
+      minWidth: "465px",
+      "@media only screen and (max-width : 400px)": {
+        minWidth : "500.25px"
+      },
       
     },
     title: {
@@ -86,6 +89,9 @@ export default function Checkout() {
       fontSize: "12px",
       fontFamily: "Montserrat",
       marginBottom: "6.99px",
+      "@media screen only and (max-width : 400px)":{
+        fontSize : "10px"
+      }
     },
     checkCon: {
       marginTop: "20.01px",
@@ -104,6 +110,10 @@ export default function Checkout() {
         color: "#828282",
         fontSize: "16px",
       },
+      "@media screen only and (max-width : 400px)":{
+        width: "349.25px",
+        height: "40.56px",
+      }
     },
     inputFieldLast: {
       width: "217px",
@@ -140,9 +150,9 @@ export default function Checkout() {
         backgroundColor: "#EF7E1A",
       },
     },
-    paper: {
-      minWidth: "383px",
-      minHeight: "535px",
+    productmainCon: {
+      maxWidth: "383px",
+      maxHeight: "535px",
       backgroundColor: "#F2F2F2",
       borderRadius: "12px",
       "@media screen only and (max-width : 400px)":{
@@ -152,6 +162,9 @@ export default function Checkout() {
     },
     productCon: {
       padding: "1px 29px",
+      "@media screen only and (max-width : 400px)":{
+        padding : "1px 26px"
+      }
     },
     productSubCon: {
       display: "flex",
@@ -235,14 +248,14 @@ export default function Checkout() {
       fontSize: "18px",
       fontFamily: "Montserrat",
       "@media screen only and (max-width : 400px)":{
-        fontSize : "14px",
+        fontSize : "100px",
       }
     },
     total: {
       fontSize: "14px",
       fontFamily: "Montserrat",
       "@media screen only and (max-width : 400px)":{
-        fontSize : "14px",
+        fontSize : "100px",
       }
     },
   };
@@ -387,7 +400,7 @@ export default function Checkout() {
           </Box>
         </Box>
         <Box>
-          <Paper sx={style.paper} elevation="0">
+          <Paper sx={style.productmainCon} elevation="0">
             <Box sx={style.productCon}>
               <Box sx={style.productSubCon}>
                 <Box component="img" src={Photo1} sx={style.products}></Box>
