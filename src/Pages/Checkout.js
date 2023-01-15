@@ -351,6 +351,7 @@ export default function Checkout() {
                     <Typography sx={style.discountedPrice}>$94.99</Typography>
                   </Box>
                   <TextField
+                    type = "tel"
                     sx={style.productQuantity}
                     inputProps={{ style: { textAlign: "center" } }}
                     InputProps={{
