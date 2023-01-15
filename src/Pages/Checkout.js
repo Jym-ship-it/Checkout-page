@@ -62,7 +62,7 @@ export default function Checkout() {
     infoCon: {
       minWidth: "465px",
       "@media only screen and (max-width : 400px)": {
-        minWidth : "500.25px"
+        minWidth : "349.25px"
       },
       
     },
@@ -111,7 +111,7 @@ export default function Checkout() {
         fontSize: "16px",
       },
       "@media only screen and (max-width : 400px)":{
-        width: "349.25px",
+        width: "364.25px",
         height: "40.56px",
       }
     },
@@ -123,10 +123,15 @@ export default function Checkout() {
         borderRadius: "12px",
         border: "1px solid #828282",
       },
+      "@media only screen and (max-width : 400px)":{
+        width: "162.98px",
+        height: "40.56px",
+      }
     },
     lastField: {
       display: "flex",
-      justifyContent: "space-between",
+      justifyContent : "space-between"
+      
     },
     checkText: {
       fontFamily: "Montserrat",
