@@ -22,7 +22,7 @@ import Photo1 from "../Assets/Images/photo1.png";
 import Photo2 from "../Assets/Images/photo2.png";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import IndeterminateCheckBoxIcon from "@mui/icons-material/IndeterminateCheckBox";
-import { useState } from "react";
+
 
 export default function Checkout() {
   const country = [
@@ -46,6 +46,9 @@ export default function Checkout() {
   const style = {
     mainCon: {
       margin: "64px 240px",
+      "@media only screen and (max-width : 400px)":{
+        margin : "32px 18px"
+      }
     },
     subCon: {
       display: "flex",
@@ -53,21 +56,31 @@ export default function Checkout() {
       marginTop: "58.01px",
       "@media only screen and (max-width : 400px)": {
         flexDirection: "column-reverse",
+        marginTop : "20.96px"
       },
     },
     infoCon: {
       maxWidth: "465px",
+      
     },
     title: {
       fontSize: "36px",
       fontFamily: "Montserrat",
       color: "#4E5150",
+      "@media only screen and (max-width : 400px)":{
+        fontSize : "24px",
+      }
     },
     subTitle: {
       fontSize: "18px",
       fontFamily: "Montserrat",
       color: "#333333",
       marginBottom: "14.95px",
+      "@media only screen and (max-width : 400px)":{
+        marginTop : "39px",
+        fontSize : "14px",
+      }
+      
     },
     label: {
       fontSize: "12px",
@@ -132,6 +145,10 @@ export default function Checkout() {
       minHeight: "535px",
       backgroundColor: "#F2F2F2",
       borderRadius: "12px",
+      "@media screen only and (max-width : 400px)":{
+        minWidth: "350px",
+        minHeight: "489px",
+      }
     },
     productCon: {
       padding: "1px 29px",
@@ -140,16 +157,27 @@ export default function Checkout() {
       display: "flex",
       justifyContent: "space-between",
       marginTop: "33px",
+      "@media screen only and (max-width : 400px)":{
+        marginTop : "28.89px"
+      }
     },
     products: {
       width: "145.7px",
       height: "135.91px",
       borderRadius: "12px",
+      "@media screen only and (max-width : 400px)":{
+        width: "130.71px",
+        height: "124.32px",
+      }
     },
     productName: {
       fontSize: "16px",
       fontFamily: "Montserrat",
       marginBottom: "6px",
+      "@media screen only and (max-width : 400px)":{
+        fontSize : "12px",
+        marginBottom : "5.49px"
+      }
     },
     priceCon: {
       display: "flex",
@@ -160,11 +188,17 @@ export default function Checkout() {
       fontSize: "16px",
       fontFamily: "Montserrat",
       color: "#F2994A",
+      "@media screen only and (max-width : 400px)":{
+        fontSize : "14px",
+      }
     },
     discountedPrice: {
       fontSize: "12px",
       fontFamily: "Montserrat",
       textDecorationLine: "line-through",
+      "@media screen only and (max-width : 400px)":{
+        fontSize : "10px",
+      }
     },
     productQuantity: {
       width: "134.25px",
@@ -173,12 +207,19 @@ export default function Checkout() {
         borderRadius: "12px",
         border: "1px solid #828282",
       },
+      "@media screen only and (max-width : 400px)":{
+        width : "122.8px",
+        marginTop : "22.13px"
+      }
     },
     iconButton: {
       fontSize: "21px",
     },
     shippingCon: {
-      marginTop: "85.54px",
+      marginTop: "95.24px",
+      "@media screen only and (max-width : 400px)":{
+        marginTop : "86.79px"
+      }
     },
     divider: {
       width: "327.06px",
@@ -193,10 +234,16 @@ export default function Checkout() {
     shippingFee: {
       fontSize: "18px",
       fontFamily: "Montserrat",
+      "@media screen only and (max-width : 400px)":{
+        fontSize : "14px",
+      }
     },
     total: {
       fontSize: "14px",
       fontFamily: "Montserrat",
+      "@media screen only and (max-width : 400px)":{
+        fontSize : "14px",
+      }
     },
   };
   return (
