@@ -25,11 +25,6 @@ import IndeterminateCheckBoxIcon from "@mui/icons-material/IndeterminateCheckBox
 import { useState } from "react";
 
 export default function Checkout() {
-  let [initialValue, setinitialValue] = useState(0);
-  let [product, setproduct] = useState(0);
-  let [producttotal, setproducttotal] = useState(0);
-  let [product2Total, setProduct2Total] = useState(0);
-  const [total, settotal] = useState(false);
   const country = [
     {
       label: "Philippines",
@@ -204,32 +199,6 @@ export default function Checkout() {
       fontFamily: "Montserrat",
     },
   };
-  const handleChangeRemove = () => {
-    if (initialValue <= 0) {
-      setinitialValue((initialValue = 0));
-    } else {
-      setinitialValue(initialValue - 1);
-      setproducttotal(producttotal - 54.99);
-    }
-  };
-  const handleChangeAdd = () => {
-    setinitialValue(initialValue + 1);
-    setproducttotal(producttotal + 54.99);
-    settotal(true);
-  };
-  const handleChangeRemove1 = () => {
-    if (product <= 0) {
-      setproduct((product = 0));
-    } else {
-      setproduct(product - 1);
-      setProduct2Total(product2Total - 74.99);
-    }
-  };
-  const handleChangeAdd1 = () => {
-    setproduct(product + 1);
-    setProduct2Total(product2Total + 74.99);
-    settotal(true);
-  };
   return (
     <Box sx={style.mainCon}>
       <Typography sx={style.title}>Checkout</Typography>
@@ -383,19 +352,18 @@ export default function Checkout() {
                   </Box>
                   <TextField
                     sx={style.productQuantity}
-                    value={initialValue}
                     inputProps={{ style: { textAlign: "center" } }}
                     InputProps={{
                       startAdornment: (
                         <InputAdornment>
-                          <IconButton onClick={handleChangeRemove}>
+                          <IconButton>
                             <IndeterminateCheckBoxIcon sx={style.iconButton} />
                           </IconButton>
                         </InputAdornment>
                       ),
                       endAdornment: (
                         <InputAdornment>
-                          <IconButton onClick={handleChangeAdd}>
+                          <IconButton>
                             <AddBoxIcon sx={style.iconButton} />
                           </IconButton>
                         </InputAdornment>
@@ -414,19 +382,19 @@ export default function Checkout() {
                   </Box>
                   <TextField
                     sx={style.productQuantity}
-                    value={product}
+                    type = "number"
                     inputProps={{ style: { textAlign: "center" } }}
                     InputProps={{
                       startAdornment: (
                         <InputAdornment>
-                          <IconButton onClick={handleChangeRemove1}>
+                          <IconButton>
                             <IndeterminateCheckBoxIcon sx={style.iconButton} />
                           </IconButton>
                         </InputAdornment>
                       ),
                       endAdornment: (
                         <InputAdornment>
-                          <IconButton onClick={handleChangeAdd1}>
+                          <IconButton>
                             <AddBoxIcon sx={style.iconButton} />
                           </IconButton>
                         </InputAdornment>
@@ -445,14 +413,7 @@ export default function Checkout() {
                 <Box sx={style.shipping}>
                   <Typography sx={style.shippingFee}>Total</Typography>
                   <Typography sx={style.total}>
-                    $
-                    {total
-                      ? (
-                          Math.round(
-                            (producttotal + product2Total + 19) * 100
-                          ) / 100
-                        ).toFixed(2)
-                      : 0}
+                    1
                   </Typography>
                 </Box>
               </Box>
