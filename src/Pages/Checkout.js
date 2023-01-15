@@ -382,7 +382,7 @@ export default function Checkout() {
                   </Box>
                   <TextField
                     sx={style.productQuantity}
-                    type = "number"
+                    type = "tel"
                     inputProps={{ style: { textAlign: "center" } }}
                     InputProps={{
                       startAdornment: (
