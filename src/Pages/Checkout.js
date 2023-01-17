@@ -22,7 +22,7 @@ import Photo1 from "../Assets/Images/photo1.png";
 import Photo2 from "../Assets/Images/photo2.png";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import IndeterminateCheckBoxIcon from "@mui/icons-material/IndeterminateCheckBox";
-
+import { useState } from "react";
 
 export default function Checkout() {
   const country = [
@@ -46,9 +46,9 @@ export default function Checkout() {
   const style = {
     mainCon: {
       margin: "64px 18px",
-      "@media only screen and (max-width : 400px)":{
-        margin : "32px 18px"
-      }
+      "@media only screen and (max-width : 400px)": {
+        margin: "32px 18px",
+      },
     },
     subCon: {
       display: "flex",
@@ -56,42 +56,40 @@ export default function Checkout() {
       marginTop: "58.01px",
       "@media only screen and (max-width : 400px)": {
         flexDirection: "column-reverse",
-        marginTop : "20.96px"
+        marginTop: "20.96px",
       },
     },
     infoCon: {
       minWidth: "465px",
       "@media only screen and (max-width : 400px)": {
-        minWidth : "349.25px"
+        minWidth: "349.25px",
       },
-      
     },
     title: {
       fontSize: "36px",
       fontFamily: "Montserrat",
       color: "#4E5150",
-      "@media only screen and (max-width : 400px)":{
-        fontSize : "24px",
-      }
+      "@media only screen and (max-width : 400px)": {
+        fontSize: "24px",
+      },
     },
     subTitle: {
       fontSize: "18px",
       fontFamily: "Montserrat",
       color: "#333333",
       marginBottom: "14.95px",
-      "@media only screen and (max-width : 400px)":{
-        marginTop : "39px",
-        fontSize : "14px",
-      }
-      
+      "@media only screen and (max-width : 400px)": {
+        marginTop: "39px",
+        fontSize: "14px",
+      },
     },
     label: {
       fontSize: "12px",
       fontFamily: "Montserrat",
       marginBottom: "6.99px",
-      "@media only screen and (max-width : 400px)":{
-        fontSize : "10px"
-      }
+      "@media only screen and (max-width : 400px)": {
+        fontSize: "10px",
+      },
     },
     checkCon: {
       marginTop: "20.01px",
@@ -110,10 +108,13 @@ export default function Checkout() {
         color: "#828282",
         fontSize: "16px",
       },
-      "@media only screen and (max-width : 400px)":{
+      "@media only screen and (max-width : 400px)": {
         width: "349.25px",
         height: "40.56px",
-      }
+        "& input::placeholder": {
+          fontSize: "12px",
+        },
+      },
     },
     inputFieldLast: {
       width: "217px",
@@ -123,15 +124,22 @@ export default function Checkout() {
         borderRadius: "12px",
         border: "1px solid #828282",
       },
-      "@media only screen and (max-width : 400px)":{
+      "& input::placeholder": {
+        fontFamily: "Montserrat",
+        color: "#828282",
+        fontSize: "16px",
+      },
+      "@media only screen and (max-width : 400px)": {
         width: "162.98px",
         height: "40.56px",
-      }
+        "& input::placeholder": {
+          fontSize: "12px",
+        },
+      },
     },
     lastField: {
       display: "flex",
-      justifyContent : "space-between"
-      
+      justifyContent: "space-between",
     },
     checkText: {
       fontFamily: "Montserrat",
@@ -160,42 +168,42 @@ export default function Checkout() {
       maxHeight: "535px",
       backgroundColor: "#F2F2F2",
       borderRadius: "12px",
-      "@media only screen and (max-width : 400px)":{
+      "@media only screen and (max-width : 400px)": {
         minWidth: "350px",
         minHeight: "489px",
-      }
+      },
     },
     productCon: {
       padding: "1px 29px",
-      "@media only screen and (max-width : 400px)":{
-        padding : "1px 26px"
-      }
+      "@media only screen and (max-width : 400px)": {
+        padding: "1px 26px",
+      },
     },
     productSubCon: {
       display: "flex",
       justifyContent: "space-between",
       marginTop: "33px",
-      "@media only screen and (max-width : 400px)":{
-        marginTop : "28.89px"
-      }
+      "@media only screen and (max-width : 400px)": {
+        marginTop: "28.89px",
+      },
     },
     products: {
       width: "145.7px",
       height: "135.91px",
       borderRadius: "12px",
-      "@media only screen and (max-width : 400px)":{
+      "@media only screen and (max-width : 400px)": {
         width: "130.71px",
         height: "124.32px",
-      }
+      },
     },
     productName: {
       fontSize: "16px",
       fontFamily: "Montserrat",
       marginBottom: "6px",
-      "@media only screen and (max-width : 400px)":{
-        fontSize : "12px",
-        marginBottom : "5.49px"
-      }
+      "@media only screen and (max-width : 400px)": {
+        fontSize: "12px",
+        marginBottom: "5.49px",
+      },
     },
     priceCon: {
       display: "flex",
@@ -206,17 +214,17 @@ export default function Checkout() {
       fontSize: "16px",
       fontFamily: "Montserrat",
       color: "#F2994A",
-      "@media only screen and (max-width : 400px)":{
-        fontSize : "14px",
-      }
+      "@media only screen and (max-width : 400px)": {
+        fontSize: "14px",
+      },
     },
     discountedPrice: {
       fontSize: "12px",
       fontFamily: "Montserrat",
       textDecorationLine: "line-through",
-      "@media only screen and (max-width : 400px)":{
-        fontSize : "10px",
-      }
+      "@media only screen and (max-width : 400px)": {
+        fontSize: "10px",
+      },
     },
     productQuantity: {
       width: "134.25px",
@@ -225,29 +233,29 @@ export default function Checkout() {
         borderRadius: "12px",
         border: "1px solid #828282",
       },
-      "@media only screen and (max-width : 400px)":{
-        width : "122.8px",
-        marginTop : "22.13px"
-      }
+      "@media only screen and (max-width : 400px)": {
+        width: "122.8px",
+        marginTop: "22.13px",
+      },
     },
     iconButton: {
       fontSize: "21px",
     },
     shippingCon: {
       marginTop: "95.24px",
-      "@media only screen and (max-width : 400px)":{
-        marginTop : "86.79px"
-      }
+      "@media only screen and (max-width : 400px)": {
+        marginTop: "86.79px",
+      },
     },
     divider: {
       width: "327.06px",
       height: "1px",
       backgroundColor: "#BDBDBD",
       margin: "10.73px 0px",
-      "@media only screen and (max-width : 400px)":{
-        width : "299px",
+      "@media only screen and (max-width : 400px)": {
+        width: "299px",
         margin: "9.71px 0px",
-      }
+      },
     },
     shipping: {
       display: "flex",
@@ -256,18 +264,49 @@ export default function Checkout() {
     shippingFee: {
       fontSize: "18px",
       fontFamily: "Montserrat",
-      "@media only screen and (max-width : 400px)":{
-        fontSize : "14px",
-      }
+      "@media only screen and (max-width : 400px)": {
+        fontSize: "14px",
+      },
     },
     total: {
       fontSize: "18px",
       fontFamily: "Montserrat",
-      "@media only screen and (max-width : 400px)":{
-        fontSize : "14px",
-      }
+      "@media only screen and (max-width : 400px)": {
+        fontSize: "14px",
+      },
     },
   };
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState(false);
+  const [phone, setPhone] = useState("");
+  const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [postal, setPostal] = useState("");
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePhoneChange = (e) => {
+    setPhone(e.target.value);
+  };
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+  const handleAddressChange = (e) => {
+    setAddress(e.target.value);
+  };
+  const handleCityChange = (e) => {
+    setCity(e.target.value);
+  };
+  const handlePostalChange = (e) => {
+    setPostal(e.taget.value);
+  };
+  const handleClick = () => {
+    if (email === "") {
+      setEmailError(true);
+    }
+  };
+
   return (
     <Box sx={style.mainCon}>
       <Typography sx={style.title}>Checkout</Typography>
@@ -277,6 +316,8 @@ export default function Checkout() {
           <Box>
             <Typography sx={style.label}>E-mail</Typography>
             <TextField
+              onChange={handleEmailChange}
+              value={email}
               variant="outlined"
               placeholder="Enter your email..."
               sx={style.inputField}
@@ -302,6 +343,8 @@ export default function Checkout() {
                   </InputAdornment>
                 ),
               }}
+              value={phone}
+              onChange={handlePhoneChange}
             />
           </Box>
           <Box>
@@ -319,6 +362,8 @@ export default function Checkout() {
                   </InputAdornment>
                 ),
               }}
+              value={name}
+              onChange={handleNameChange}
             />
             <Typography sx={style.label}>Address</Typography>
             <TextField
@@ -333,6 +378,8 @@ export default function Checkout() {
                   </InputAdornment>
                 ),
               }}
+              value={address}
+              onChange={handleAddressChange}
             />
             <Typography sx={style.label}>City</Typography>
             <TextField
@@ -347,6 +394,8 @@ export default function Checkout() {
                   </InputAdornment>
                 ),
               }}
+              value={city}
+              onChange={handleCityChange}
             />
             <Box sx={style.lastField}>
               <Box>
@@ -387,6 +436,8 @@ export default function Checkout() {
                       </InputAdornment>
                     ),
                   }}
+                  value={postal}
+                  onChange={handlePostalChange}
                 />
               </Box>
             </Box>
@@ -402,14 +453,14 @@ export default function Checkout() {
               />
             </FormControl>
             <Box sx={style.buttonCon}>
-              <Button variant="filled" sx={style.button}>
+              <Button variant="filled" onClick={handleClick} sx={style.button}>
                 Continue
               </Button>
             </Box>
           </Box>
         </Box>
         <Box>
-          <Paper sx={style.productmainCon} elevation="0">
+          <Paper sx={style.productmainCon} elevation={0}>
             <Box sx={style.productCon}>
               <Box sx={style.productSubCon}>
                 <Box component="img" src={Photo1} sx={style.products}></Box>
@@ -420,7 +471,7 @@ export default function Checkout() {
                     <Typography sx={style.discountedPrice}>$94.99</Typography>
                   </Box>
                   <TextField
-                    type = "tel"
+                    type="tel"
                     sx={style.productQuantity}
                     inputProps={{ style: { textAlign: "center" } }}
                     InputProps={{
@@ -452,7 +503,7 @@ export default function Checkout() {
                   </Box>
                   <TextField
                     sx={style.productQuantity}
-                    type = "tel"
+                    type="tel"
                     inputProps={{ style: { textAlign: "center" } }}
                     InputProps={{
                       startAdornment: (
@@ -482,9 +533,7 @@ export default function Checkout() {
                 <Box sx={style.divider}></Box>
                 <Box sx={style.shipping}>
                   <Typography sx={style.shippingFee}>Total</Typography>
-                  <Typography sx={style.total}>
-                    1
-                  </Typography>
+                  <Typography sx={style.total}>1</Typography>
                 </Box>
               </Box>
             </Box>
